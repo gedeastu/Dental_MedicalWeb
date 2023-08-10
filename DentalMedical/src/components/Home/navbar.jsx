@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 import profile from '../../assets/profile.jpg';
 import { PaginationGetPosts } from '../../services/paginationAPI';
 const Navbar = () => {
+
+  //Fetching Data Pagination
   const [dataPagination,setDataPagination]= useState([]);
   const fetchData = async () =>{
     try{
@@ -18,13 +20,21 @@ const Navbar = () => {
     fetchData();
   },[]);
 
+  
+  // HOOK Top Drawer
   const [drawerTop,setDrawerTop] = useState(false);
   const handleClicked = ()=>{
     setDrawerTop(!drawerTop);
   }
+
+  // HOOK Active Link
+  const [activeLink, setActiveLink] = useState(false);
+  const handleLinkClick = (link)=>{
+    setActiveLink(link);
+  }
   return (
     <>
-    <nav className='flex flex-row justify-between items-center md:bg-[#E6F6FE] md:rounded-[0.63rem] md:px-8 md:py-5'>
+    <nav className='flex flex-row justify-between h-max  items-center md:bg-[#E6F6FE] md:rounded-[0.63rem] md:px-8 md:py-5'>
       <div id='logo' className='flex flex-row items-center gap-2'>
       <svg className='w-10' viewBox="0 0 155 177" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M153.548 33.274C149.742 17.6413 137.262 4.90556 121.74 0.87466C110.611 -2.01542 99.9603 2.63775 90.9236 9.28562C89.8001 10.1118 88.5175 10.5751 87.2938 11.1801L97.0841 17.4753C99.6492 19.1243 100.396 22.5468 98.7435 25.1188C97.2016 27.5215 93.8103 28.5275 91.0999 26.7782L56.3533 4.43886C49.1973 0.687981 41.3567 -1.23067 33.2569 0.87466C17.7348 4.90902 5.25495 17.6413 1.44876 33.274C-2.05321 47.6621 1.30356 61.2102 8.88138 71.45C16.957 82.3638 20.179 95.1859 21.4269 108.561C22.948 124.865 24.9981 141.113 28.666 157.07L31.3625 168.807C32.4652 173.602 36.7174 177 41.6195 177C46.4489 177 50.6596 173.699 51.8315 168.994L63.7479 121.141C65.3243 114.808 70.9939 110.369 77.4931 110.369C83.9923 110.369 89.6618 114.811 91.2382 121.141L103.155 168.994C104.327 173.699 108.537 177 113.367 177C118.269 177 122.521 173.602 123.624 168.807L126.32 157.07C129.988 141.116 132.035 124.865 133.559 108.561C134.807 95.1825 138.029 82.3638 146.105 71.45C153.693 61.2137 157.05 47.6656 153.548 33.274Z" fill="black"/>
@@ -32,7 +42,7 @@ const Navbar = () => {
       <h1 className='font-generalSans font-semibold text-2xl'>Dental</h1>
       </div>
       <div id='menuMobile'>
-      <button onClick={handleClicked} className='bg-[#1376F8] h-[3.125rem] relative z-50 px-[0.75rem] py-[1.5625rem] flex flex-row items-center justify-center rounded-lg md:hidden'>
+      <button onClick={handleClicked} className='bg-[#1376F8] h-[3.125rem] relative z-[60] px-[0.75rem] py-[1.5625rem] flex flex-row items-center justify-center rounded-lg md:hidden'>
       {
         drawerTop ? (
         <svg xmlns="http://www.w3.org/2000/svg" className='w-[1.5rem] h-[1.5rem] fill-white' viewBox="0 0 384 512"><path d="M32 448c-17.7 0-32 14.3-32 32s14.3 32 32 32l96 0c53 0 96-43 96-96l0-306.7 73.4 73.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0l-128 128c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 109.3 160 416c0 17.7-14.3 32-32 32l-96 0z"/></svg>
@@ -48,16 +58,26 @@ const Navbar = () => {
       </button>
       {
         drawerTop ? (
-        <div className='bg-[#1376F8] w-full h-96 transition-all duration-500 fixed top-0 left-0 md:hidden md:h-0 md: md:duration-500'></div>
+        <>
+        <div className='bg-[#1376F8] w-full h-96 shadow-lg pt-32 px-8 z-50 transition-all duration-500 fixed top-0 left-0 md:h-0 md:-top-96 md:transition-all md:duration-500'>
+          <Link id="home">
+          
+          </Link>
+        </div>
+        <div className='bg-black overflow-hidden fixed h-screen transition-all duration-500 w-full left-0 top-0 z-40 opacity-50 md:-z-40 md:opacity-0'></div>
+        </>
         ):(
-        <div className='-top-96 left-0 h-0 w-full fixed transition-all duration-500'></div>
+        <>
+        <div className='-top-96 left-0 h-0 w-full shadow-none fixed transition-all duration-500'></div>
+        <div className='bg-black fixed h-screen transition-all duration-500 w-full left-0 top-0 opacity-0 md:-z-40'></div>
+        </>
         )
       }
       </div>
       <div id='panigator' className=' hidden md:flex md:flex-row md:gap-10'>
         {dataPagination.map((data)=>(
-        <div key={data.key}>
-          <Link to={data.to} className='transition-all duration-200 hover:font-bold'>{data.desc}</Link>
+        <div key={data.id}>
+          <Link to={data.to} onClick={()=>handleLinkClick(data.id)} className={`transition-all duration-200 hover:font-bold ${activeLink === (data.id) ? ('font-bold'):('font-normal')}`}>{data.desc}</Link>
         </div>
         ))}
       </div>
