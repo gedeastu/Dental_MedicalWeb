@@ -3,6 +3,10 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {},
+    fontFamily:{
+      generalSans : ['General Sans Variable']
+    },
+    
     screens: {
       'sm': '640px',
       'md': '768px',
