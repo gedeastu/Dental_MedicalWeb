@@ -15,7 +15,7 @@ const HeaderArticle = () => {
   return (
     <>
     <article className='flex flex-col gap-8 md:flex-row'>
-      <div className='flex flex-col gap-7 md:gap-9'>
+      <div className='flex flex-col gap-9'>
       <div id='h1'>
         <h1 className='text-[#011632] font-generalSans font-semibold text-5xl leading-tight md:text-6xl md:leading-tight'>Get Ready For Your Best <br className='hidden md:flex' /> Ever <span className='relative z-20'>Dental Experience!
         <svg className={'absolute w-72 -z-20 font-bold md:w-full md:right-0'} viewBox="0 0 533 10" fill="none" xmlns="http://www.w3.org/2000/svg">
