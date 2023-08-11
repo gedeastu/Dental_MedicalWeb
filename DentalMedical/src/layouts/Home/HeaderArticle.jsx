@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from '../../components/button/button';
 const HeaderArticle = () => {
   return (
     <>
@@ -21,6 +22,12 @@ const HeaderArticle = () => {
         <br className='hidden md:flex'/> anything 
         <br className='md:hidden'/>
         and book yourself.</p>
+      </div>
+      <div id='btn'>
+        <Button
+        className="bg-blue-400"
+        text="Get Started"
+        />
       </div>
       </div>
     </article>
