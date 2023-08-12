@@ -24,5 +24,28 @@
     "desc":"Contact",
     "to": "/contact"
   }
+  ],
+  "FadeDoctor":[
+    {
+      "id":1,
+      "profile":"./src/assets/profil.png",
+      "name":"Thomas daniel",
+      "title":"Sr Dental",
+      "feedback": "Top Quailty dental treatment done by field experts, Highly Recommended for everyone"
+    },
+    {
+      "id":2,
+      "profile":"./src/assets/profil.png",
+      "name":"Steve Allen",
+      "title":"Prof Dental",
+      "feedback": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,molestiae quas"
+    },
+    {
+      "id":3,
+      "profile":"./src/assets/profil.png",
+      "name":"Grant Dunt",
+      "title":"CEO Dental",
+      "feedback": "Veritatis obcaecati tenetur iure eius earum ut molestias architecto voluptate aliquam"
+    }
   ]
 }

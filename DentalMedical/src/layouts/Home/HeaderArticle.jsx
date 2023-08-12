@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import Button from '../../components/button/button';
+import Fade from '../../components/swiperFade/Fade';
+import { FadeDoctorGetPosts } from '../../services/fadeDoctorAPI';
 import './HeaderArticle.css'
+import { SwiperSlide } from 'swiper/react';
 const HeaderArticle = () => {
+
+  // Resposive with window dom
   const [responsiveWithWindow,setResponsiveWithWindow] = useState(window.innerWidth);
   const resize = ()=>{
     setResponsiveWithWindow(window.innerWidth);
@@ -12,10 +17,24 @@ const HeaderArticle = () => {
       window.removeEventListener('resize',resize)
     }
   },[])
+
+  // fecthing fade doctor data API
+  const [dataFadeDoctor,setDataFadeDoctor]= useState([]);
+  const fetchData = async () =>{
+    try{
+      const data = await FadeDoctorGetPosts();
+      setDataFadeDoctor(data);
+    }catch(error){
+      console.error(error);
+    }
+  }
+  useEffect(()=>{
+    fetchData();
+  },[]);
   return (
     <>
     <article className='flex flex-col gap-8 md:flex-row'>
-      <div className='flex flex-col gap-9 md:gap-12'>
+      <div className='flex flex-col items-start gap-9 md:gap-12'>
       <div id='h1'>
         <h1 className='text-[#011632] font-generalSans font-semibold text-5xl leading-tight md:text-7xl md:leading-tight'>Get Ready For Your Best <br className='hidden md:flex' /> Ever <span className='relative z-20'>Dental Experience!
         <svg className={'absolute w-72 -z-20 font-bold md:w-full md:right-0'} viewBox="0 0 533 10" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -60,7 +79,34 @@ const HeaderArticle = () => {
           </div>
         </div>
       </div>
+      <div id='doctor'>
+      <Fade
       
+      content={
+      <>
+      {dataFadeDoctor.map((data)=>(
+        <SwiperSlide key={data.id} className='bg-white rounded-xl w-full overflow-hidden py-5'>
+          <div id='name' className='flex flex-row justify-between pb-5 px-3 items-center'>
+            <div className='flex flex-row items-center gap-3'>
+            <img src={data.profile} alt="" />
+            <div id="titleName">
+              <h1 className='font-medium'>{data.name}</h1>
+              <h2>{data.title}</h2>
+            </div></div>
+            <div>
+            <svg className='fill-[#1376F8] rounded-md' xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+            </div>
+          </div>
+          <div id='feedback' className='px-3'>
+            <p>{data.feedback}</p>
+          </div>
+        </SwiperSlide>
+      ))}
+      </>
+      }
+      />
+      </div>
+
       </div>
     </article>
     </>

@@ -7,6 +7,12 @@ export default {
       generalSans : ['General Sans Variable']
     },
     keyframes:{
+      ping : {
+        '75%, 100%' :{
+          transform: 'scale(2)',
+          opacity: '0'
+        }
+      },
       shake: {
         '0%, 100%' : {
           transform: 'translateX(0)'
@@ -72,7 +78,8 @@ export default {
     animation:{
       shake : 'shake 0.8s infinite',
       vibrate: 'vibrate 0.8s infinite',
-      phoneRing : 'phoneRing 1s infinite'
+      phoneRing : 'phoneRing 1s infinite',
+      ping : 'ping 1s cubic-bezier(0, 0, 0.2, 1) infinite'
     },
     screens: {
       'sm': '640px',
