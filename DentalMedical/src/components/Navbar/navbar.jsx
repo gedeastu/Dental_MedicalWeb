@@ -41,7 +41,7 @@ const Navbar = () => {
       <div id='panigator' className=' hidden md:flex md:flex-row md:justify-center md:mx-auto md:gap-10'>
         {dataPagination.map((data)=>(
         <div key={data.id}>
-          <Link to={data.to} onClick={()=>handleLinkClick(data.id)} className={`transition-all text-lg duration-200 hover:font-bold ${activeLink === (data.id)? ('font-semibold'):('font-normal')}`}>{data.desc}</Link>
+          <Link to={data.to} onClick={()=>handleLinkClick(data.id)} className={`transition-all font-generalSans text-lg duration-200 hover:font-semibold ${activeLink === (data.id)? ('font-semibold'):('font-medium')}`}>{data.desc}</Link>
         </div>
         ))}
       </div>
@@ -54,7 +54,7 @@ const Navbar = () => {
         <div className='relative cursor-pointer'>
         <img src={profile} alt="" className='w-[60px] h-[60px] object-cover rounded-full transition-all' />
         <div id='ping' className='absolute cursor-default right-1 top-0 h-3 flex flex-row justify-center items-center w-3 p-0.5 rounded-full'>
-          <div className='bg-[#42cd50] animate-pi absolute h-full w-full rounded-full'></div>
+          <div className='bg-[#42cd50] animate-ping absolute h-full w-full rounded-full'></div>
           <div className='bg-[#17BF28] absolute h-3 w-3 rounded-full border border-[#E6F6FE]'></div>
         </div>
         </div>

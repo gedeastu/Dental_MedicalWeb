@@ -18,7 +18,9 @@ const Fade = ({content}) => {
         //   clickable: true,
         // }}
         loop
-        autoplay={true}
+        autoplay={
+            {delay: 5000}
+        }
         modules={[EffectFade, Autoplay,Navigation]}
         className="relative z-10 w-[28rem] md:w-[30rem] rounded-lg shadow-lg border h-full"
       >
