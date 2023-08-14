@@ -1,0 +1,12 @@
+#inputNumber input::before{
+    content: "";
+    background-image: url('../../assets/Iconly/Light-Outline/Stroke\ 5.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 24px; /* Adjust to fit the icon size */
+    height: 24px;
+    position: absolute;
+    left: 10px; /* Adjust to position the icon */
+    top: 50%;
+    transform: translateY(-50%);
+}

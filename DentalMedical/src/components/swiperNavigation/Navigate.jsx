@@ -40,7 +40,7 @@ const Navigate = ({content, buttonNext, buttonPrev}) => {
     className='w-[25rem] h-[25rem] my-auto flex flex-col items-center justify-between md:w-full md:h-full md:p-4'
     >
     {content}
-    <div id="carouselController" className='flex w-0 absolute bottom-5 md:hidden'>
+    <div id="carouselController" className='flex flex-row-reverse w-48 absolute bottom-5 md:hidden'>
         <button className="swiper-prev-button swiper-button-prev w-20">
         {buttonPrev}
         </button>
