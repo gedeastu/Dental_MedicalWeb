@@ -4,7 +4,7 @@ import { EffectFade,Autoplay,Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/effect-fade';
 import 'swiper/css/navigation';
-const Fade = ({content}) => {
+const Fade = ({content,className,delay}) => {
   return (
     <>
      <Swiper
@@ -18,11 +18,10 @@ const Fade = ({content}) => {
         //   clickable: true,
         // }}
         loop
-        autoplay={
-            {delay: 5000}
-        }
+        autoplay={delay}
         modules={[EffectFade, Autoplay,Navigation]}
-        className="relative z-10 w-[28rem] md:w-[30rem] rounded-lg shadow-lg border h-full"
+        // className="relative z-10 w-[28rem] md:w-[30rem] rounded-lg shadow-lg border h-full"
+        className={`${className}`}
       >
         {content}
       </Swiper>

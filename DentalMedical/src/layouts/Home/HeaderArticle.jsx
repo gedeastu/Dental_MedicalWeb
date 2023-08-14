@@ -81,7 +81,12 @@ const HeaderArticle = () => {
       </div>
       <div id='doctor'>
       <Fade
-      
+      className={
+        'relative z-10 w-[28rem] md:w-[30rem] rounded-lg shadow-lg border h-full'
+      }
+      delay={
+        {delay: 5000}
+      }
       content={
       <>
       {dataFadeDoctor.map((data)=>(
