@@ -31,7 +31,7 @@ const Navigate = ({content, buttonNext, buttonPrev}) => {
         },
         768:{
             slidesPerView: 3,
-            spaceBetween: 20,
+            spaceBetween: 30,
             // slidesPerGroup: 2,
         }
     }}
