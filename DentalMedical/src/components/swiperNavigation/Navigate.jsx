@@ -19,11 +19,15 @@ const Navigate = ({content, buttonNext, buttonPrev}) => {
         clickable : true
     }}
     loop
+    autoplay
     breakpoints={{
         360:{
             slidesPerView: 1,
             spaceBetween: 20,
             slidesPerGroup: 1,
+            autoplay:{
+                delay:5000
+            }
         },
         768:{
             slidesPerView: 3,
@@ -33,7 +37,7 @@ const Navigate = ({content, buttonNext, buttonPrev}) => {
     }}
     onSwiper={(swiper) => console.log(swiper)}
     onSlideChange={() => console.log('slide change')}
-    className='w-96 h-[25rem] my-auto flex flex-col items-center justify-between gap-3 md:w-full md:h-full md:p-4'
+    className='w-[25rem] h-[25rem] my-auto flex flex-col items-center justify-between md:w-full md:h-full md:p-4'
     >
     {content}
     <div id="carouselController" className='flex w-0 absolute bottom-5 md:hidden'>
