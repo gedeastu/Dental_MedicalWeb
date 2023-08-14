@@ -30,7 +30,7 @@ const Banner = () => {
   // },[]);
   return (
     <>
-    <article className='w-[27rem] relative flex justify-center my-16 items-center h-[27rem] md:w-[40rem] md:my-0 md:h-[40rem]'>
+    <article className='w-[27rem] relative flex justify-center mt-20 mb-10 items-center h-[27rem] md:w-[40rem] md:my-0 md:h-[40rem]'>
       <div className='border-4 border-dashed w-full h-full relative flex justify-center items-center rounded-full border-[#1376F8] md:w-full md:h-full'>
       <div id="toothTopRight" className='bg-[#1376F8] transition-all flex justify-center items-center rounded-full w-12 h-12 absolute top-5 right-[3.5rem] md:right-[6.5rem] md:h-14 md:w-14 md:top-7'>
       <svg  className={'w-6 h-6 rotate-12 md:w-8 md:h-8'} viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
