@@ -6,7 +6,7 @@ import './HeaderArticle.css'
 import { SwiperSlide } from 'swiper/react';
 const HeaderArticle = () => {
 
-  // Resposive with window dom
+  // Responsive with window dom
   const [responsiveWithWindow,setResponsiveWithWindow] = useState(window.innerWidth);
   const resize = ()=>{
     setResponsiveWithWindow(window.innerWidth);

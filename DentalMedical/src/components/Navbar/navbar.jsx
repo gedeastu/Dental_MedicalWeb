@@ -13,13 +13,14 @@ const Navbar = () => {
     try{
       const data = await PaginationGetPosts();
       setDataPagination(data);
+      // console.log(data);
     }catch(error){
       console.error(error);
     }
   }
   useEffect(()=>{
     fetchData();
-    setActiveLink(fetchData[0]);
+    // setActiveLink(fetchData[0]);
   },[]);
 
   // HOOK Active Link
@@ -41,7 +42,7 @@ const Navbar = () => {
       <div id='panigator' className=' hidden md:flex md:flex-row md:justify-center md:mx-auto md:gap-10'>
         {dataPagination.map((data)=>(
         <div key={data.id}>
-          <Link to={data.to} onClick={()=>handleLinkClick(data.id)} className={`transition-all font-generalSans text-lg duration-200 hover:font-semibold ${activeLink === (data.id)? ('font-semibold'):('font-medium')}`}>{data.desc}</Link>
+          <Link to={data.to} onClick={()=>handleLinkClick(data.id)} className={`transition-all font-generalSans text-lg duration-200 hover:font-semibold  ${activeLink === (data.to)? ('border-b-2 border-black font-semibold transition-all'):('font-medium')}`}>{data.desc}</Link>
         </div>
         ))}
       </div>

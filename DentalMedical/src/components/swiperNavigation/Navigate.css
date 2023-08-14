@@ -1,12 +1,3 @@
-.swiper-container .swiper-button-prev{
-    background-image: url('../../assets/Iconly/Bold/Calling.svg');
-    background-color: black;
-    width: 100px;
-    height: 100px;
-    color:none;
-    background-size: contain;
-    background-position: center;
-}
 .swiper-button-prev::after,.swiper-button-next::after{
     content: "";
 }
