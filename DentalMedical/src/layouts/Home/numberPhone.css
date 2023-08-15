@@ -1,12 +1,28 @@
-#inputNumber input::before{
+/* #inputNumber input::before{
     content: "";
     background-image: url('../../assets/Iconly/Light-Outline/Stroke\ 5.svg');
     background-size: contain;
     background-repeat: no-repeat;
-    width: 24px; /* Adjust to fit the icon size */
+    width: 24px; 
     height: 24px;
     position: absolute;
-    left: 10px; /* Adjust to position the icon */
+    left: 10px;
     top: 50%;
     transform: translateY(-50%);
+} */
+.Gradient{
+    background: linear-gradient(to top right, #1fc3ff, #74d5ff, #25B4F8, #81c6ff);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+@keyframes gradient {
+    0%{
+        background-position: 0 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0 50%;
+    }
 }

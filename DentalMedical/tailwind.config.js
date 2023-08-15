@@ -59,7 +59,6 @@ export default {
           transform: 'translate(-2px, 2px)'
         }
       },
-
       phoneRing: {
         '0%, 100%': {
           transform: 'translateY(0) rotate(0deg)'
@@ -73,13 +72,22 @@ export default {
         '75%' : {
           transform: 'translateY(-2px) rotate(-5deg)'
         }
+      },
+      floatEffect: {
+        '0%, 100%':{
+          transform: 'translateY(-10px)'
+        },
+        '50%':{
+          transform: 'translateY(10px)'
+        }
       }
     },
     animation:{
       shake : 'shake 0.8s infinite',
       vibrate: 'vibrate 0.8s infinite',
       phoneRing : 'phoneRing 1s infinite',
-      ping : 'ping 1s cubic-bezier(0, 0, 0.2, 1) infinite'
+      ping : 'ping 1s cubic-bezier(0, 0, 0.2, 1) infinite',
+      floatEffect: 'gradientEffect 5s ease infinite'
     },
     screens: {
       'sm': '640px',
