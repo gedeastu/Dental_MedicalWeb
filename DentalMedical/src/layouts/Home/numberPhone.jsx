@@ -30,8 +30,8 @@ const NumberInput = () => {
     anything <br className='md:hidden'/>
     and book yourself.</p>
     <div id='inputForm' className='flex flex-row items-center'>
-    <input id='inputNumber' type="number" className='w-full h-[3.5rem] border-y-2 border-l-2 text-[#1376F8] text- rounded-tl-lg rounded-bl-lg placeholder:flex placeholder:items-center md:w-96'
-    placeholder='&#xf002; Enter your Phone Number'
+    <input id='inputNumber' type="number" className="input-number w-full h-[3.5rem] border-y-2 border-l-2 text-[#1376F8] pl-[1rem] font-medium rounded-tl-lg rounded-bl-lg placeholder:flex-row placeholder:gap-10 placeholder:flex placeholder:items-center md:w-96"
+    placeholder='Enter your Phone Number'
     />
     <Button 
     content={
@@ -44,7 +44,7 @@ const NumberInput = () => {
     </div>
     </div>
     <div id="banner" className='flex flex-col items-center'>
-    <div id="image" className='w-[100%] transition-all relative h-[30rem] md:h-[23rem] md:w-[28rem]'>
+    <div id="image" className='w-[100%] transition-all relative h-[25rem] md:h-[23rem] md:w-[28rem]'>
     <div className='Gradient hidden w-[28rem] h-[23rem] rounded-xl md:flex md:scale-105'></div>
     {/* <Fade
       delay={
