@@ -8,7 +8,7 @@ import { SwiperSlide } from 'swiper/react';
 const NumberInput = () => {
   return (
     <>
-    <article className='flex flex-col gap-10 md:my-16 md:flex-row md:justify-between md:px-20'>
+    <article className='flex flex-col justify-center gap-10 md:my-16 md:flex-row md:justify-between md:items-center md:px-20'>
     <div id="desc" className='relative flex flex-col gap-6'>
     <h1 className='font-generalSans font-semibold text-4xl leading-tight md:leading-snug md:text-[3.5rem]'>We’re <span className='relative z-20'>Welcoming
       <svg className={'absolute w-full font-bold left-0 bottom-1 -z-10 md:w-full md:right-0'} viewBox="0 0 533 10" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -45,7 +45,8 @@ const NumberInput = () => {
     </div>
     <div id="banner" className='flex flex-col items-center'>
     <div id="image" className='w-[100%] transition-all relative h-[30rem] md:h-[23rem] md:w-[28rem]'>
-      <Fade
+    <div className='Gradient hidden w-[28rem] h-[23rem] rounded-xl md:flex md:scale-105'></div>
+    {/* <Fade
       delay={
         {delay: 5000}
       }
@@ -63,8 +64,8 @@ const NumberInput = () => {
         </SwiperSlide>
         </>
        }
-      />
-      <img src={dentistPatient} alt="" className='rounded-xl z-10 transition-all object-cover w-full h-full md:absolute md:top-8 md:-left-8 md:scale-105'/>
+    /> */}
+    <img src={dentistPatient} alt="" className='rounded-xl z-10 transition-all object-cover w-full h-full md:absolute md:top-8 md:-left-8 md:scale-105'/>
     </div>
     </div>
     </article>
