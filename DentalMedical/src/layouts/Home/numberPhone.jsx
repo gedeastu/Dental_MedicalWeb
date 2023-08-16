@@ -65,7 +65,7 @@ const NumberInput = () => {
         </>
        }
     /> */}
-    <img src={dentistPatient} alt="" className='rounded-xl z-10 transition-all object-cover w-full h-full md:absolute md:top-8 md:-left-8 md:scale-105'/>
+    <img src={dentistPatient} alt="" className='rounded-xl z-10 shadow-md transition-all object-cover w-full h-full md:absolute md:top-8 md:-left-8 md:scale-105'/>
     </div>
     </div>
     </article>

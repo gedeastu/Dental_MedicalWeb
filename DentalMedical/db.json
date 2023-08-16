@@ -67,5 +67,27 @@
       "title":"Dental Implants",
       "desc":"A dental implant is an artificial tooth root that’s placed into your jaw to hold a prosthetic tooth or bridge."
     }
+  ],
+  "Advantage":[
+    {
+      "id":1,
+      "icon":"./src/assets/Iconly/Light-Outline/Shield Done.svg",
+      "content":"Top quality dental team"
+    },
+    {
+      "id":2,
+      "icon":"./src/assets/Iconly/Light-Outline/Shield Done.svg",
+      "content":"State of the art dental services"
+    },
+    {
+      "id":3,
+      "icon":"./src/assets/Iconly/Light-Outline/Shield Done.svg",
+      "content":"Discount on all dental treatment"
+    },
+    {
+      "id":4,
+      "icon":"./src/assets/Iconly/Light-Outline/Shield Done.svg",
+      "content":"Enrollment is quick and easy"
+    }
   ]
 }

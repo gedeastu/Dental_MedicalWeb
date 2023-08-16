@@ -2,7 +2,8 @@ import React from "react";
 import Header from "../../layouts/Home/Header";
 import Services from "../../layouts/Home/Services";
 import NumberInput from "../../layouts/Home/numberPhone";
-import Navigation from "../../components/swiperNavigation/Navigate";
+import Advantage from "../../layouts/Home/Advantage";
+import Quality from "../../layouts/Home/Quality";
 const Home = () => {
   return (
     <>
@@ -10,6 +11,8 @@ const Home = () => {
         <Header/>
         <Services/>
         <NumberInput/>
+        <Advantage/>
+        <Quality/>
         {/* <div className="bg-[#E6F6FE]"><Navigation/></div> */}
       </div>
     </>
