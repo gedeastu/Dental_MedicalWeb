@@ -4,6 +4,7 @@ import Services from "../../layouts/Home/Services";
 import NumberInput from "../../layouts/Home/numberPhone";
 import Advantage from "../../layouts/Home/Advantage";
 import Quality from "../../layouts/Home/Quality";
+import Playlist from "../../layouts/Home/Playlist";
 const Home = () => {
   return (
     <>
@@ -13,6 +14,7 @@ const Home = () => {
         <NumberInput/>
         <Advantage/>
         <Quality/>
+        <Playlist/>
         {/* <div className="bg-[#E6F6FE]"><Navigation/></div> */}
       </div>
     </>

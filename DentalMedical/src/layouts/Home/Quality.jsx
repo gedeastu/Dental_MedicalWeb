@@ -5,9 +5,9 @@ import Smile from '../../assets/smile02.jpg'
 const Quality = () => {
   return (
     <>
-    <article className='flex flex-col justify-center gap-10 my-24 md:my-16 md:flex-row md:justify-between md:items-center md:px-20'>
+    <article className='flex flex-col justify-center gap-10 my-24 md:flex-row md:justify-between md:items-center md:px-20'>
     <div id="desc" className='relative flex flex-col gap-6'>
-    <h1 className='font-generalSans text-4xl font-semibold leading-tight w-96 md:w-[40rem] md:text-5xl md:leading-snug'>Leave Your Worries At The Door And Enjoy A Healthier, More Precise Smile</h1>
+    <h1 className='font-generalSans text-[2.5rem] font-semibold leading-tight w-[27rem] md:w-[40rem] md:text-5xl md:leading-snug'>Leave Your Worries At The Door And Enjoy A Healthier, More Precise Smile</h1>
     <p className='font-generalSans font-thin text-xl md:text-2xl'>We use only the best quality materials on the
     <br className='md:hidden'/> 
     market in order to 
