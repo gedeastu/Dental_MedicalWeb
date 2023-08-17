@@ -18,7 +18,7 @@ const Playlist = () => {
   }
   return (
     <>
-    <article className='w-full flex flex-col mt-40 mb-10 gap-10 md:items-center'>
+    <article className='w-full flex flex-col mt-40 mb-10 gap-10 transition-all md:items-center'>
       <div id="contentText" className='flex flex-col gap-7 md:items-center'>
         <h1 className='font-generalSans text-[2.5rem] font-semibold leading-tight w-[27rem] md:w-[55rem] md:text-center md:text-[3.5rem]'>We’re <span className='relative z-20'>Welcoming
       <svg className={'absolute w-full font-bold left-0 bottom-1 -z-10 md:w-full md:right-0'} viewBox="0 0 533 10" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -27,7 +27,7 @@ const Playlist = () => {
         <p className='font-generalSans font-thin text-xl w-[25rem] md:w-[37rem] md:text-center md:text-2xl'>We use only the best quality materials on the market in order to provide the best products to our patients, So don’t worry about anything and book yourself.</p>
       </div>
       <div id="video" className='video-player'>
-      <div id='contentVideo' className='w-full h-max relative rounded-xl overflow-hidden md:w-[50rem]' onClick={handleClick}>
+      <div id='contentVideo' className='w-full transition-all h-max relative rounded-xl overflow-hidden md:w-[50rem]' onClick={handleClick}>
       <video className='' ref={videoDentistRef} controls>
         <source src={DentistVideo} type='video/mp4' className=''/>
       </video>
