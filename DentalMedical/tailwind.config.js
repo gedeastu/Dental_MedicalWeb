@@ -6,6 +6,10 @@ export default {
     fontFamily:{
       generalSans : ['General Sans Variable']
     },
+    // colors: {
+    //   'regal-blue': '#243c5a',
+    //   'mid-blue': '#1376F8'
+    // },
     keyframes:{
       ping : {
         '75%, 100%' :{

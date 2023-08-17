@@ -30,20 +30,22 @@ input[type="number"] {
   background-position: left center;
 }
 
-.video-player::-webkit-media-controls {
+.video-player video::-webkit-media-controls {
   /* display: none !important; */
-  position: relative;
-  bottom: 0;
-  left: 0;
+  background-color: transparent;
 }
+.video-player video::-webkit-media-controls-background {
+    background-color: #fff; /* Change this to your desired background color */
+  }
 /* .plyr__controls {
     background-color: rgba(0, 0, 0, 0.5);
   }
   
   /* Example: Change the color of the play button */
-  .plyr__control[data-plyr="play"] svg {
+  /* .plyr__control[data-plyr="play"] svg {
     fill: #5061b1;
   } */
+
 @keyframes gradient {
     0%{
         background-position: 0 50%;
