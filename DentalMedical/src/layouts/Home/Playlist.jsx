@@ -18,7 +18,7 @@ const Playlist = () => {
   }
   return (
     <>
-    <article className='w-full flex flex-col my-20 gap-10 md:items-center'>
+    <article className='w-full flex flex-col mt-40 mb-10 gap-10 md:items-center'>
       <div id="contentText" className='flex flex-col gap-7 md:items-center'>
         <h1 className='font-generalSans text-[2.5rem] font-semibold leading-tight w-[27rem] md:w-[55rem] md:text-center md:text-[3.5rem]'>We’re <span className='relative z-20'>Welcoming
       <svg className={'absolute w-full font-bold left-0 bottom-1 -z-10 md:w-full md:right-0'} viewBox="0 0 533 10" fill="none" xmlns="http://www.w3.org/2000/svg">
