@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import Navigate from '../../components/swiperNavigation/Navigate'
+import NavigateDesktop from '../../components/DesktopswiperNavigation copy/NavigateDesktop'
 import './OurSpecialist.css'
 import Swiper from 'swiper'
-import { NavigateGetPosts } from '../../services/navigateAPI'
+import { OurSpecialistGetPosts } from '../../services/ourSpecialistAPI'
 import { SwiperSlide } from 'swiper/react'
 const OurSpecialist = () => {
 
@@ -17,12 +17,13 @@ const OurSpecialist = () => {
   //     window.removeEventListener('resize',resize)
   //   }
   // },[])
-// fecthing navigate data API
-  const [dataNavigate,setDataNavigate]= useState([]);
+
+  // fecthing OurSpecialist data API
+  const [dataOurSpecialist,setDataOurSpecialist]= useState([]);
   const fetchData = async () =>{
     try{
-      const data = await NavigateGetPosts();
-      setDataNavigate(data);
+      const data = await OurSpecialistGetPosts();
+      setDataOurSpecialist(data);
     }catch(error){
       console.error(error);
     }
@@ -33,10 +34,23 @@ const OurSpecialist = () => {
   
   return (
     <>
-     <div className='w-full h-full relative p-10 bg-[#E6F6FE] flex flex-col justify-center items-center my-28 rounded-2xl'>
-      <Navigate
+     <div className='w-full h-[40rem] relative px-5 pt-16 pb-10 bg-[#E6F6FE] flex flex-col justify-center my-28 rounded-2xl md:items-center'>
+      <div id="title" className='flex flex-col gap-5'>
+        <h1 className='font-generalSans font-semibold text-[2.5rem]'>Meet our specialists</h1>
+        <p className='text-lg w-96'>We use only the best quality materials on the market in order to provide the best products to our patients, So don’t worry about anything and book yourself.</p>
+      </div>
+      <NavigateDesktop
       content={
         <>
+        {dataOurSpecialist.map((data)=>{
+          <SwiperSlide key={data.id} className='relative z-50 w-96'>
+          <div>
+            <h1>{data.name}</h1>
+            <h1>1</h1>
+            <img src={data.img} alt="" />
+          </div>
+          </SwiperSlide>
+        })}
         {/* <div id="carouselController">
         <div className='swiper-button-prev'></div>
         <div className='swiper-button-next'></div>
@@ -63,6 +77,11 @@ const OurSpecialist = () => {
         </div>
       }
       />
+      <svg className="absolute left-0 right-0" viewBox="0 0 1440 566" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M1838.5 391.205C1812.26 390.956 1611.26 558.855 1347.39 556.353C980.832 552.878 789.333 -67.5212 271.425 100.484C-139.163 233.676 -319.209 246.637 -393.267 150.596" stroke="#C1DEEF"/>
+      <path d="M1839.89 244.541C1816.53 257.295 1611.26 558.853 1347.39 556.352C980.832 552.876 728.722 -0.401011 210.814 167.605C-199.774 300.797 -264.032 278.186 -393.802 207.003" stroke="#C1DEEF"/>
+      <path d="M1837.64 481.457C1811.41 481.208 1611.21 563.367 1347.35 560.865C980.789 557.389 786.009 -168.514 301.902 48.8717C-51.2019 207.431 -259.454 269.768 -393.695 195.722" stroke="#C1DEEF"/>
+      </svg>
      </div>
     </>
   )

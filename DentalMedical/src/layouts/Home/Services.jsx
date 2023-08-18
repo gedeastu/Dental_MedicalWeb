@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import Navigate from '../../components/swiperNavigation/Navigate'
+import NavigateMobile from '../../components/MobileswiperNavigation/NavigateMobile'
 import './Services.css'
 import Swiper from 'swiper'
 import { NavigateGetPosts } from '../../services/navigateAPI'
@@ -33,8 +33,8 @@ const Services = () => {
   
   return (
     <>
-     <div className='w-full h-full relative p-10 bg-[#E6F6FE] flex flex-col justify-center items-center my-28 rounded-2xl'>
-      <Navigate
+     <div className='w-full h-full relative py-10 bg-[#E6F6FE] flex flex-col justify-center items-center my-28 rounded-2xl'>
+      <NavigateMobile
       content={
         <>
         {dataNavigate.map((data)=>(
@@ -62,6 +62,9 @@ const Services = () => {
         <div className="swiper-pagination"></div>
         </div> */}
         </>
+      }
+      display={
+        `md:hidden`
       }
       buttonNext={
         <div className='bg-white h-full w-20 p-2 flex transition-all items-center group hover:bg-[#1376F8]'>

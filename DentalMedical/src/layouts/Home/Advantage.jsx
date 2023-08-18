@@ -10,7 +10,6 @@ const Advantage = () => {
     try{
       const data = await AdvantageGetPosts();
       setDataAdvantage(data);
-      console.log(data)
     }catch(error){
       console.error(error);
     }

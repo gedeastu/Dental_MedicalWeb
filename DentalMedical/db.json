@@ -89,5 +89,37 @@
       "icon":"./src/assets/Iconly/Light-Outline/Shield Done.svg",
       "content":"Enrollment is quick and easy"
     }
+  ],
+  "OurSpecialist":[
+    {
+      "id":1,
+      "img":"./src/assets/pictDr01.jpg",
+      "name":"Jim Carry",
+      "specialist":"Orthodontist"
+    },
+    {
+      "id":2,
+      "img":"./src/assets/pictDr02.jpg",
+      "name":"Wade Warren",
+      "specialist":"Endodontist"
+    },
+    {
+      "id":3,
+      "img":"./src/assets/pictDr03.jpg",
+      "name":"Jenny Wilson",
+      "specialist":"Periodontist"
+    },
+    {
+      "id":4,
+      "img":"./src/assets/pictDr04.jpg",
+      "name":"Jacob Jones",
+      "specialist":"Pediatric Dentist"
+    },
+    {
+      "id":5,
+      "img":"./src/assets/pictDr05.jpg",
+      "name":"Jim Carry",
+      "specialist":"Orthodontist"
+    }
   ]
 }
