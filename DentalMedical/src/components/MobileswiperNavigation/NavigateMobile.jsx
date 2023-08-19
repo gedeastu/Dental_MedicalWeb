@@ -6,7 +6,7 @@ import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
 import 'swiper/css';
 // SwiperCore.use([Navigation]);
 // import 'swiper/css/navigation';
-const Navigate = ({content, buttonNext, buttonPrev, display}) => {
+const NavigateMobile = ({content, buttonNext, buttonPrev, displayBtn}) => {
   const swiper = useSwiper();
   return (
     <>
@@ -39,7 +39,7 @@ const Navigate = ({content, buttonNext, buttonPrev, display}) => {
     className='w-[25rem] h-[25rem] my-auto flex flex-col items-center justify-between md:w-full md:h-full md:p-4'
     >
     {content}
-    <div id="carouselController" className={`flex flex-row-reverse w-48 absolute bottom-5 ${display}`}>
+    <div id="carouselController" className={`flex flex-row-reverse w-48 absolute bottom-5 ${displayBtn}`}>
         <button className="swiper-prev-button swiper-button-prev w-20">
         {buttonPrev}
         </button>
@@ -53,4 +53,4 @@ const Navigate = ({content, buttonNext, buttonPrev, display}) => {
   )
 }
 
-export default Navigate
+export default NavigateMobile

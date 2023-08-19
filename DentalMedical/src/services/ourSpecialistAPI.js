@@ -1,13 +1,24 @@
-//API FOR PAGINATION
+//API FOR OUR SPECIALIST
 import axios from 'axios';
-const DataInstanceOurSpecialist = axios.create({
-    baseURL: "http://localhost:7357/OurSpecialist",
-  });
+// const DataInstanceOurSpecialist = axios.create({
+//     baseURL: "http://localhost:7357/OurSpecialist",
+// });
   
-  export const OurSpecialistGetPosts = () => {
-    return DataInstanceOurSpecialist.get("/")
-      .then((response) => response.data)
-      .catch((error) => {
-        throw error;
-      });
-  };
+//   export const OurSpecialistGetPosts = () => {
+//     return DataInstanceOurSpecialist.get("/")
+//       .then((response) => response.data)
+//       .catch((error) => {
+//         throw error;
+//       });
+//   };
+const DataInstanceOurSpecialist = axios.create({
+  baseURL: "http://localhost:7357/OurSpecialist",
+});
+
+export const OurSpecialistGetPosts = () => {
+  return DataInstanceOurSpecialist.get("/")
+    .then((response) => response.data)
+    .catch((error) => {
+      throw error;
+    });
+};

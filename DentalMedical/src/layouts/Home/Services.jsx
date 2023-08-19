@@ -63,7 +63,7 @@ const Services = () => {
         </div> */}
         </>
       }
-      display={
+      displayBtn={
         `md:hidden`
       }
       buttonNext={

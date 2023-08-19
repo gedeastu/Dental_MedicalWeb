@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import NavigateDesktop from '../../components/DesktopswiperNavigation copy/NavigateDesktop'
+import NavigateDesktop from '../../components/DesktopswiperNavigation/NavigateDesktop'
 import './OurSpecialist.css'
-import Swiper from 'swiper'
 import { OurSpecialistGetPosts } from '../../services/ourSpecialistAPI'
 import { SwiperSlide } from 'swiper/react'
 const OurSpecialist = () => {
@@ -18,7 +17,7 @@ const OurSpecialist = () => {
   //   }
   // },[])
 
-  // fecthing OurSpecialist data API
+  // fecthing Our Specialist data API
   const [dataOurSpecialist,setDataOurSpecialist]= useState([]);
   const fetchData = async () =>{
     try{
@@ -31,32 +30,33 @@ const OurSpecialist = () => {
   useEffect(()=>{
     fetchData();
   },[]);
-  
   return (
     <>
-     <div className='w-full h-[40rem] relative px-5 pt-16 pb-10 bg-[#E6F6FE] flex flex-col justify-center my-28 rounded-2xl md:items-center'>
+     <div className='w-full h-[40rem] relative px-5 pt-16 pb-10 bg-[#E6F6FE] flex flex-col justify-between my-28 rounded-2xl md:items-center'>
       <div id="title" className='flex flex-col gap-5'>
         <h1 className='font-generalSans font-semibold text-[2.5rem]'>Meet our specialists</h1>
         <p className='text-lg w-96'>We use only the best quality materials on the market in order to provide the best products to our patients, So don’t worry about anything and book yourself.</p>
       </div>
+      {/* {dataOurSpecialist.map((data, index) => (
+        <div key={data.id}>
+          <h1>{data.name}</h1>
+        </div>
+      ))} */}
       <NavigateDesktop
       content={
         <>
-        {dataOurSpecialist.map((data)=>{
-          <SwiperSlide key={data.id} className='relative z-50 w-96'>
-          <div>
-            <h1>{data.name}</h1>
-            <h1>1</h1>
-            <img src={data.img} alt="" />
-          </div>
-          </SwiperSlide>
-        })}
-        {/* <div id="carouselController">
-        <div className='swiper-button-prev'></div>
-        <div className='swiper-button-next'></div>
-        <div className="swiper-pagination"></div>
-        </div> */}
+        {dataOurSpecialist.map((data)=>(
+        <SwiperSlide key={data.id} className='w-full h-96 bg-white'>
+          <h1>{data.name}</h1>
+        </SwiperSlide>
+        ))}
         </>
+      }
+      displayBtn={
+        `hidden md:flex`
+      }
+      style={
+        'hidden w-[25rem] h-96 my-auto md:flex md:flex-row md:items-center md:justify-between md:w-full md:h-full md:p-4'
       }
       buttonNext={
         <div className='bg-white h-full w-20 p-2 flex transition-all items-center group hover:bg-[#1376F8]'>
@@ -77,11 +77,11 @@ const OurSpecialist = () => {
         </div>
       }
       />
-      <svg className="absolute left-0 right-0" viewBox="0 0 1440 566" fill="none" xmlns="http://www.w3.org/2000/svg">
+      {/* <svg className="absolute left-0 right-0" viewBox="0 0 1440 566" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M1838.5 391.205C1812.26 390.956 1611.26 558.855 1347.39 556.353C980.832 552.878 789.333 -67.5212 271.425 100.484C-139.163 233.676 -319.209 246.637 -393.267 150.596" stroke="#C1DEEF"/>
       <path d="M1839.89 244.541C1816.53 257.295 1611.26 558.853 1347.39 556.352C980.832 552.876 728.722 -0.401011 210.814 167.605C-199.774 300.797 -264.032 278.186 -393.802 207.003" stroke="#C1DEEF"/>
       <path d="M1837.64 481.457C1811.41 481.208 1611.21 563.367 1347.35 560.865C980.789 557.389 786.009 -168.514 301.902 48.8717C-51.2019 207.431 -259.454 269.768 -393.695 195.722" stroke="#C1DEEF"/>
-      </svg>
+      </svg> */}
      </div>
     </>
   )
