@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import Button from '../../components/button/button'
 import NavigateDesktop from '../../components/DesktopswiperNavigation/NavigateDesktop'
 import './OurSpecialist.css'
 import { OurSpecialistGetPosts } from '../../services/ourSpecialistAPI'
@@ -17,6 +18,10 @@ const OurSpecialist = () => {
   //   }
   // },[])
 
+  const [show,setShow] = useState(false);
+  const handleClick = () =>{
+    setShow(!show);
+  }
   // fecthing Our Specialist data API
   const [dataOurSpecialist,setDataOurSpecialist]= useState([]);
   const fetchData = async () =>{
@@ -32,16 +37,40 @@ const OurSpecialist = () => {
   },[]);
   return (
     <>
-     <div className='w-full h-[40rem] relative px-5 pt-16 pb-10 bg-[#E6F6FE] flex flex-col justify-between my-28 rounded-2xl md:items-center'>
+     <div className='w-full h-full relative px-5 pt-16 pb-10 bg-[#E6F6FE] flex flex-col justify-between my-28 rounded-2xl md:items-center'>
       <div id="title" className='flex flex-col gap-5'>
         <h1 className='font-generalSans font-semibold text-[2.5rem]'>Meet our specialists</h1>
         <p className='text-lg w-96'>We use only the best quality materials on the market in order to provide the best products to our patients, So don’t worry about anything and book yourself.</p>
       </div>
-      {/* {dataOurSpecialist.map((data, index) => (
-        <div key={data.id}>
-          <h1>{data.name}</h1>
+
+      {show ? (
+        <div id='specialistes' className='flex flex-col items-center h-full overflow-hidden md:hidden'>
+        {dataOurSpecialist.map((data, index) => (
+          <div id='content' key={data.id} className='h-80 relative'>
+            <img src={data.img} alt="" className='' />
+            <h1 className='absolute z-10 bottom-0'>{data.name}</h1>
+          </div>
+        ))}
         </div>
-      ))} */}
+      ):(
+        <div id='specialistes' className='flex flex-col items-center h-[40rem] overflow-hidden md:hidden'>
+        {dataOurSpecialist.map((data, index) => (
+          <div id='content' key={data.id} className='h-80 relative'>
+            <img src={data.img} alt="" className='' />
+            <h1 className='absolute z-10 bottom-0'>{data.name}</h1>
+          </div>
+        ))}
+        </div>
+      )}
+      <Button
+      onClick={handleClick} 
+      content={
+        'View All Members'
+      }
+      className={
+        'bg-[#1376F8] w-44 h-14 mx-auto font-medium rounded-xl'
+      }
+      />
       <NavigateDesktop
       content={
         <>
