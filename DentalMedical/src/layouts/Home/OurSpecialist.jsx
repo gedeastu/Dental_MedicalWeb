@@ -44,20 +44,26 @@ const OurSpecialist = () => {
       </div>
 
       {show ? (
-        <div id='specialistes' className='flex flex-col items-center h-full overflow-hidden md:hidden'>
+        <div id='specialistes' className='flex flex-col h-[135rem] transition-all duration-500 gap-10 items-center my-10 overflow-hidden md:hidden'>
         {dataOurSpecialist.map((data, index) => (
-          <div id='content' key={data.id} className='h-80 relative'>
-            <img src={data.img} alt="" className='' />
-            <h1 className='absolute z-10 bottom-0'>{data.name}</h1>
+          <div id='content' key={data.id} className='h-full w-[22rem] relative flex justify-center'>
+            <img src={data.img} alt="" className='rounded-xl h-full w-full object-cover' />
+            <div className='bgDesc absolute mx-auto w-80 z-10 text-white font-generalSans rounded-xl my-5 font-medium text-left pl-5 py-3 bottom-0'>
+            <h1 className='text-xl'>{data.name}</h1>
+            <p className='text-lg'>{data.specialist}.</p>
+            </div>
           </div>
         ))}
         </div>
       ):(
-        <div id='specialistes' className='flex flex-col items-center h-[40rem] overflow-hidden md:hidden'>
+        <div id='specialistes' className='flex flex-col gap-10 transition-all duration-500 items-center h-[45rem] my-10 overflow-hidden md:hidden'>
         {dataOurSpecialist.map((data, index) => (
-          <div id='content' key={data.id} className='h-80 relative'>
-            <img src={data.img} alt="" className='' />
-            <h1 className='absolute z-10 bottom-0'>{data.name}</h1>
+          <div id='content' key={data.id} className='h-full w-[22rem] relative flex justify-center'>
+            <img src={data.img} alt="" className='rounded-xl h-full w-full object-cover' />
+            <div className='bgDesc absolute mx-auto w-64 z-10 text-white font-generalSans rounded-xl my-5 font-medium text-left pl-5 py-1 bottom-0'>
+            <h1 className=''>{data.name}</h1>
+            <p>{data.specialist}.</p>
+            </div>
           </div>
         ))}
         </div>
