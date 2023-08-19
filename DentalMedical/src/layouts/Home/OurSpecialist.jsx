@@ -74,14 +74,14 @@ const OurSpecialist = () => {
         show ? ('Close All Members') : ('View All Members')
       }
       className={
-        'bg-[#1376F8] w-44 h-14 mx-auto font-medium rounded-xl'
+        'bg-[#1376F8] w-44 h-14 mx-auto font-medium rounded-xl md:hidden'
       }
       />
       <NavigateDesktop
       content={
         <>
         {dataOurSpecialist.map((data)=>(
-        <SwiperSlide key={data.id} className='w-full h-96 bg-white'>
+        <SwiperSlide key={data.id} className='ml-20 w-20 h-96'>
           <h1>{data.name}</h1>
         </SwiperSlide>
         ))}
@@ -91,7 +91,7 @@ const OurSpecialist = () => {
         `hidden md:flex`
       }
       style={
-        'hidden w-[25rem] h-96 my-auto md:flex md:flex-row md:items-center md:justify-between md:w-full md:h-full md:p-4'
+        'hidden md:flex md:flex-row md:items-center md:justify-between md:w-full md:h-full md:p-4'
       }
       buttonNext={
         <div className='bg-white h-full w-20 p-2 flex transition-all items-center group hover:bg-[#1376F8]'>
