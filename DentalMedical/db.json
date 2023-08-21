@@ -120,6 +120,36 @@
       "img":"./src/assets/pictDr01.jpg",
       "name":"Jim Carry",
       "specialist":"Orthodontist"
+    },
+    {
+      "id":6,
+      "img":"./src/assets/pictDr02.jpg",
+      "name":"Wade Warren",
+      "specialist":"Endodontist"
+    },
+    {
+      "id":7,
+      "img":"./src/assets/pictDr03.jpg",
+      "name":"Jenny Wilson",
+      "specialist":"Periodontist"
+    },
+    {
+      "id":8,
+      "img":"./src/assets/pictDr04.jpg",
+      "name":"Jacob Jones",
+      "specialist":"Pediatric Dentist"
+    },
+    {
+      "id":9,
+      "img":"./src/assets/pictDr01.jpg",
+      "name":"Jim Carry",
+      "specialist":"Orthodontist"
+    },
+    {
+      "id":10,
+      "img":"./src/assets/pictDr02.jpg",
+      "name":"Wade Warren",
+      "specialist":"Endodontist"
     }
   ]
 }

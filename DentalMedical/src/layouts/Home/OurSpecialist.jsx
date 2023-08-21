@@ -40,14 +40,14 @@ const OurSpecialist = () => {
     <>
      <div className='w-full h-full relative px-5 pt-16 pb-10 bg-[#E6F6FE] flex flex-col justify-between my-28 rounded-2xl md:items-center'>
       <div id="title" className='flex flex-col gap-5'>
-        <h1 className='font-generalSans font-semibold text-[2.5rem]'>Meet our specialists</h1>
+        <h1 className='font-generalSans font-semibold text-[2.3rem] w-max'>Meet our specialists</h1>
         <p className='text-lg w-96'>We use only the best quality materials on the market in order to provide the best products to our patients, So don’t worry about anything and book yourself.</p>
       </div>
 
       {show ? (
-        <div id='specialistes' className='flex flex-col h-[135rem] transition-all duration-500 gap-10 items-center my-10 overflow-hidden md:hidden'>
+        <div id='specialistes' className='flex flex-col h-[265rem] transition-all duration-500 gap-10 items-center my-10 overflow-hidden md:hidden'>
         {dataOurSpecialist.map((data, index) => (
-          <div id='content' key={data.id} className='h-full w-[22rem] relative flex justify-center'>
+          <div id='content' key={data.id} className='h-96 w-[22rem] relative flex justify-center'>
             <img src={data.img} alt="" className='rounded-xl h-full w-full object-cover' />
             <div className='bgDesc absolute mx-auto w-80 z-10 text-white font-generalSans rounded-xl my-5 font-medium text-left pl-5 py-3 bottom-0'>
             <h1 className='text-xl'>{data.name}</h1>
@@ -59,7 +59,7 @@ const OurSpecialist = () => {
       ):(
         <div id='specialistes' className='flex flex-col gap-10 transition-all duration-500 items-center h-[53rem] my-10 overflow-hidden md:hidden'>
         {dataOurSpecialist.map((data, index) => (
-          <div id='content' key={data.id} className='h-full w-[22rem] relative flex justify-center'>
+          <div id='content' key={data.id} className='h-96 w-[22rem] relative flex justify-center'>
             <img src={data.img} alt="" className='rounded-xl h-full w-full object-cover' />
             <div className='bgDesc absolute mx-auto w-80 z-10 text-white font-generalSans rounded-xl my-5 font-medium text-left pl-5 py-3 bottom-0'>
             <h1 className='text-xl'>{data.name}</h1>
@@ -82,12 +82,14 @@ const OurSpecialist = () => {
       content={
         <>
         {dataOurSpecialist.map((data)=>(
-        <SwiperSlide key={data.id} className='ml-20 w-20 h-96'>
-        <Card>
-          <img src={data.img} alt="" />
-          <h1>{data.name}</h1>
-          <p>{data.specialist}</p>
-        </Card>
+        <SwiperSlide key={data.id} className=''>
+         <div id='content' key={data.id} className='h-[30rem] mx-auto w-max gap-5 relative flex flex-row justify-center'>
+            <img src={data.img} alt="" className='rounded-xl h-full w-full object-cover' />
+            <div className='bgDesc absolute mx-auto w-96 z-10 text-white font-generalSans rounded-xl my-5 font-medium text-left pl-5 py-3 bottom-0'>
+            <h1 className='text-xl'>{data.name}</h1>
+            <p className='text-lg'>{data.specialist}.</p>
+            </div>
+          </div>
         </SwiperSlide>
         ))}
         </>
@@ -96,7 +98,7 @@ const OurSpecialist = () => {
         `hidden md:flex`
       }
       style={
-        'hidden md:flex md:flex-row md:items-center md:justify-between md:w-full md:h-full md:p-4'
+        'hidden md:flex md:flex-row md:items-center md:gap-10 md:w-full md:h-full md:p-4'
       }
       buttonNext={
         <div className='bg-white h-full w-20 p-2 flex transition-all items-center group hover:bg-[#1376F8]'>

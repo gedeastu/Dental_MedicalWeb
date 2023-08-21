@@ -29,7 +29,7 @@ const NavigateDesktop = ({content, buttonNext, buttonPrev, displayBtn, style}) =
         },
         768:{
             slidesPerView: 3,
-            spaceBetween:10,
+            spaceBetween:0,
             // autoplay:false,
             // loop: false
             autoplay:{
