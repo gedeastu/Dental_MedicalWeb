@@ -42,11 +42,11 @@ const NavigateDesktop = ({content, buttonNext, buttonPrev, displayBtn, style}) =
     className={style}
     >
     {content}
-    <div id="carouselController" className={`flex flex-row-reverse w-48 absolute bottom-5 ${displayBtn}`}>
-        <button className="swiper-prev-button swiper-button-prev w-20">
+    <div id="carouselController" className={`flex flex-row-reverse mx-auto w-96 absolute bottom-5 ${displayBtn}`}>
+        <button className="swiper-prev-button swiper-button-prev w-max">
         {buttonPrev}
         </button>
-        <button className="swiper-next-button swiper-button-next w-20">
+        <button className="swiper-next-button swiper-button-next w-max">
         {buttonNext}
         </button>
         {/* <div className="swiper-pagination"></div> */}
