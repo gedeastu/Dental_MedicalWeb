@@ -4,6 +4,7 @@ import NavigateDesktop from '../../components/DesktopswiperNavigation/NavigateDe
 import './OurSpecialist.css'
 import { OurSpecialistGetPosts } from '../../services/ourSpecialistAPI'
 import { SwiperSlide } from 'swiper/react'
+import Card from '../../components/card/card'
 const OurSpecialist = () => {
 
   // Resposive with window dom
@@ -82,7 +83,11 @@ const OurSpecialist = () => {
         <>
         {dataOurSpecialist.map((data)=>(
         <SwiperSlide key={data.id} className='ml-20 w-20 h-96'>
+        <Card>
+          <img src={data.img} alt="" />
           <h1>{data.name}</h1>
+          <p>{data.specialist}</p>
+        </Card>
         </SwiperSlide>
         ))}
         </>

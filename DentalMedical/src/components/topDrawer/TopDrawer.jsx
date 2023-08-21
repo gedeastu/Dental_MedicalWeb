@@ -1,19 +1,34 @@
-import React from 'react'
+import React, { useReducer } from 'react'
 import { useState,useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import profile from '../../assets/profile.jpg';
 import { PaginationGetPosts } from '../../services/paginationAPI';
-const TopDrawer = () => {
-   // HOOK Top Drawer
-  const [drawerTop,setDrawerTop] = useState(false);
-  const handleClicked = ()=>{
-    setDrawerTop(!drawerTop);
+const initialState = {
+  drawerTop: false,
+}
+function reducer(state,action){
+  switch(action.type){
+    case "OpenDrawer":
+      return {
+        ...state,
+        drawerTop: !state.drawerTop,
+      }
   }
+}
+const TopDrawer = () => {
+  const [{drawerTop},dispatch] = useReducer(
+    reducer,initialState
+  )
+  //  // HOOK Top Drawer
+  // const [drawerTop,setDrawerTop] = useState(false);
+  // const handleClicked = ()=>{
+  //   setDrawerTop(!drawerTop);
+  // }
   {(drawerTop) ? (document.body.style.overflow = 'hidden'):(document.body.style.overflow = 'auto')}
   return (
     <>
     <div id='menuMobile'>
-      <button onClick={handleClicked} className='bg-[#1376F8] h-[3.125rem] relative z-[60] px-[0.75rem] py-[1.5625rem] flex flex-row items-center justify-center rounded-lg md:hidden'>
+      <button onClick={()=> dispatch({type: "OpenDrawer"})} className='bg-[#1376F8] h-[3.125rem] relative z-[60] px-[0.75rem] py-[1.5625rem] flex flex-row items-center justify-center rounded-lg md:hidden'>
       {
         drawerTop ? (
         <svg xmlns="http://www.w3.org/2000/svg" className='w-[1.5rem] h-[1.5rem] fill-white' viewBox="0 0 384 512"><path d="M32 448c-17.7 0-32 14.3-32 32s14.3 32 32 32l96 0c53 0 96-43 96-96l0-306.7 73.4 73.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0l-128 128c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 109.3 160 416c0 17.7-14.3 32-32 32l-96 0z"/></svg>

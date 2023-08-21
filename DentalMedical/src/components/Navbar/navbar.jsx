@@ -1,11 +1,28 @@
-// Make Navbar for Home Page in Header Layout
-import React from 'react';
+import React, { useReducer } from 'react';
 import { useState,useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import profile from '../../assets/profile.jpg';
 import { PaginationGetPosts } from '../../services/paginationAPI';
 import TopDrawer from '../topDrawer/TopDrawer';
+import { NavLink } from 'react-router-dom';
+import './navbar.css'
+// State Initial and Value Default
+const initialState = {
+  activeLink: 1,
+}
+function reducer(state,action){
+  switch(action.type){
+    case "ActiveLink":
+      return{
+        ...state,
+        activeLink: action.payload
+      }
+  }
+} 
 const Navbar = () => {
+  //Reducer Hook State
+  const [{activeLink},dispatch] = useReducer(
+    reducer,initialState
+  )
 
   //Fetching Data Pagination
   const [dataPagination,setDataPagination]= useState([]);
@@ -20,14 +37,14 @@ const Navbar = () => {
   }
   useEffect(()=>{
     fetchData();
-    // setActiveLink(fetchData[0]);
   },[]);
 
   // HOOK Active Link
-  const [activeLink, setActiveLink] = useState(1);
-  const handleLinkClick = (link)=>{
-    setActiveLink(link);
-  }
+  // const [activeLink, setActiveLink] = useState(1);
+  // const handleLinkClick = (link)=>{
+  //   setActiveLink(link);
+  // }
+
 
   return (
     <>
@@ -40,10 +57,15 @@ const Navbar = () => {
       </div>
       <TopDrawer/>
       <div id='panigator' className=' hidden md:flex md:flex-row md:justify-center md:mx-auto md:gap-10'>
-        {dataPagination.map((data)=>(
+        {/* {dataPagination.map((data)=>(
         <div key={data.id}>
-          <Link to={data.to} onClick={()=>handleLinkClick(data.id)} className={`transition-all font-generalSans text-lg duration-200 hover:font-semibold ${activeLink === (data.id)? ('border-b-2 border-black font-semibold transition-all'):('font-medium')}`}>{data.desc}</Link>
+          <NavLink to={data.to} onClick={()=> dispatch({type: "ActiveLink", payload:(data.id)})} className={`transition-all font-generalSans text-lg duration-200 hover:font-semibold ${activeLink === (data.id)? ('border-b-2 border-black font-semibold transition-all'):('font-medium')}`}>{data.desc}</NavLink>
         </div>
+        ))} */}
+        {dataPagination.map((data)=>(
+          <div key={data.id}>
+            <NavLink to={data.to} className={``}>{data.desc}</NavLink>
+          </div>
         ))}
       </div>
         {/* <Link to='/home'>Home</Link>
