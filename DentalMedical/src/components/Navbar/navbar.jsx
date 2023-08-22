@@ -4,24 +4,45 @@ import profile from '../../assets/profile.jpg';
 import { PaginationGetPosts } from '../../services/paginationAPI';
 import TopDrawer from '../topDrawer/TopDrawer';
 import { NavLink } from 'react-router-dom';
+import Dropdown from '../dropdown/dropdown';
 import './navbar.css'
-// State Initial and Value Default
-const initialState = {
-  activeLink: 1,
+// State Initial || Value Default
+// const initialActiveLink = {
+//   activeLink: 1,
+// }
+const initialDropdown = {
+  stateDropdown: false,
 }
+
+
+// function reducer(state,action){
+//   switch(action.type){
+//     case "ActiveLink":
+//       return{
+//         ...state,
+//         activeLink: action.payload
+//       }
+//   }
+// } 
 function reducer(state,action){
-  switch(action.type){
-    case "ActiveLink":
+  switch (action.type){
+    case 'activeDropdown':
       return{
         ...state,
-        activeLink: action.payload
-      }
+        // stateDropdown: action.payload
+        stateDropdown: !state.stateDropdown
+      };
+      default:
+        return state;
   }
-} 
+}
 const Navbar = () => {
   //Reducer Hook State
-  const [{activeLink},dispatch] = useReducer(
-    reducer,initialState
+  // const [{activeLink},dispatchActive] = useReducer(
+  //   reducer,initialActiveLink
+  // )
+  const [{stateDropdown},dispatch]= useReducer(
+    reducer,initialDropdown
   )
 
   //Fetching Data Pagination
@@ -73,15 +94,26 @@ const Navbar = () => {
         <Link to='/services'>Blogs</Link>
         <Link to='/services'>About</Link>
         <Link to='/services'>Contact</Link> */}
-      <div id="profileAndBook" className='hidden md:flex md:flex-row md:gap-6'>
-        <div className='relative cursor-pointer'>
-        <img src={profile} alt="" className='w-[60px] h-[60px] object-cover rounded-full transition-all' />
+      <div id="profileAndBook" className='hidden md:flex md:relative md:flex-row md:gap-6'>
+        <div className='relative flex flex-col items-center'>
+        <button onClick={()=>dispatch({type:'activeDropdown'})} className='w-[60px] h-[60px] relative cursor-pointer'>
+        <img src={profile} alt="" className='w-full h-full object-cover rounded-full transition-all' />
         <div id='ping' className='absolute cursor-default right-1 top-0 h-3 flex flex-row justify-center items-center w-3 p-0.5 rounded-full'>
           <div className='bg-[#42cd50] animate-ping absolute h-full w-full rounded-full'></div>
           <div className='bg-[#17BF28] absolute h-3 w-3 rounded-full border border-[#E6F6FE]'></div>
         </div>
+        </button>
+        {stateDropdown ? (
+          <Dropdown styles={`bg-[#4ad2ff] border border-white/20 transition-all duration-300 absolute right-0 z-20 top-16 w-44 rounded-xl shadow-lg h-52 opacity-100 after:w-10 after:h-10  after:relative  after:z-20 after:-top-20`}>
+
+          </Dropdown>
+        ) : (
+        <Dropdown styles={`bg-[#4ad2ff] border border-white/20 absolute transition-all duration-300 right-0 -z-50 top-16 w-44 rounded-xl shadow-lg h-0 opacity-0 after:w-10 after:h-10  after:relative  after:z-20 after:-top-20`}>
+
+        </Dropdown>
+        )}
         </div>
-        <button className='bg-[#1376F8] font-generalSans font-semibold text-white px-8 rounded-xl'>Book Now</button>
+        <button className='bg-[#1376F8] font-generalSans w-36 font-semibold text-white rounded-xl'>Book Now</button>
       </div>
     </nav>
     </>

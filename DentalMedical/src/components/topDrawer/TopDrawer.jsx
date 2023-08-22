@@ -3,9 +3,6 @@ import { useState,useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import profile from '../../assets/profile.jpg';
 import { PaginationGetPosts } from '../../services/paginationAPI';
-const initialState = {
-  drawerTop: false,
-}
 function reducer(state,action){
   switch(action.type){
     case "OpenDrawer":
@@ -14,6 +11,9 @@ function reducer(state,action){
         drawerTop: !state.drawerTop,
       }
   }
+}
+const initialState = {
+  drawerTop: false,
 }
 const TopDrawer = () => {
   const [{drawerTop},dispatch] = useReducer(
